@@ -61,12 +61,15 @@ Our website passes the lighthouse accessibility criteria comfortably. It does ho
 Using media queries we developed a site that would operate differently on screens of:
 
 1. max-width: 768px
+
 ![image](https://user-images.githubusercontent.com/108976875/204583293-c4574157-0043-4c0f-bbfc-0430856130b3.png)
 
 2. max-width: 600px
+
 ![image](https://user-images.githubusercontent.com/108976875/204583185-d1e6c7c5-6f12-4eb5-82d2-8bfd8ef2a346.png)
 
 3. max-width: 480px
+
 ![image](https://user-images.githubusercontent.com/108976875/204583062-2a0ae639-4296-43e9-a616-d7bb6784496d.png)
 
 
