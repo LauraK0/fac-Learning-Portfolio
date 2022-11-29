@@ -1,8 +1,12 @@
 # Markup portfolio
 
 ## 1. Structure a site using semantic HTML to aid accessibility
-
-
+The markup project was structured semantic to add accessibility. For example, we had a <header>, <main> and <footer> section. Within this we used ordered our heading elements in a logical sequence, eg. <h2>, <h3> and <h4>. Other semantic html elements we deployed included: 
+ 
+- all <img> elements were given an alt attribute.
+- list elements (<li>) for list content.
+- Used the <a> element for links.
+ 
 ## 2. Make a web page more readable for screen readers
 
 Semantic html describes the structure of the document. It is particularly useful for screen readers that use the underlying markup semantics to figure out what things are. Using a tag that more accurately describes what the element is will allow the screen reader to communicate to the user a better picture of the site. An example where I utilise semantic html is in the contact form of the markup project. I use the tags: section: form, h2, label and input to describe each element. 
@@ -36,6 +40,7 @@ Except from markup project contact form:
 ```  
 
 ## 3. Design a UI without relying solely on colour, so that we don’t exclude colour-blind users
+
 
 ## 4. Ensure our UI has sufficient colour contrast so that everyone can perceive it comfortably
 
