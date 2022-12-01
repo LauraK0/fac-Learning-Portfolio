@@ -3,6 +3,7 @@
 
 ## 1. Write code that executes asynchronously
 
+
 ## 2. Use callbacks to access values that aren't available asynchronously 
 
 
@@ -30,6 +31,11 @@
 
 ## 10. Toggle the classes applied to DOM nodes to change their CSS properties
 
+The code snip below is an example where we add a class of `'search-result-definition'` to the `para` variable declared earlier. 
+
+```
+para.classList.add("search-results-definition");
+```
   
 ## 11. Use consistent layout and spacing
 
