@@ -3,31 +3,70 @@
 
 ## 1. Write code that executes asynchronously
 
-
+```
+fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+      .then((response) => {
+          if (!response.ok) throw new Error(response.status); 
+          return response.json();
+      })
+      .then......
+```
 ## 2. Use callbacks to access values that aren't available asynchronously 
 
+```
+
+```      
 
 ## 3. Use promises to access values that aren't available asynchronously
 
 
 ## 4. Use the fetch method to make the HTTP requests and receive responses
 
+```
+fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+      .then((response) => {
+          if (!response.ok) throw new Error(response.status); 
+          return response.json();
+      })
+      .then......
+```
 
 ## 5. Configure the options argument of the fetch method to make GET and POST requests
-
 
   
 ## 6. Use the map array method to create a new array containing new values
 
-  
+ I did not use the map array method in the markup project. But the below example illustrates the syntax involved in using map array.
+
+```
+const numbers = [65, 44, 12, 4];
+const newArr = numbers.map(myFunction);
+
+document.getElementById("demo").innerHTML = newArr;
+
+function myFunction(num) {
+  return num * 10;
+}
+```
+
 ## 7. Use the filter array method to create a new array with certain values removed
 
+I did not use the filter array method in the markup project. But the below example illustrates the syntax involved in creating an array filter.
+
+```
+const ages = [32, 33, 16, 40];
+const result = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
+```
 
 ## 8. Access DOM nodes using a variety of selectors
 
 We only utilised one event listener in our code. It listens for the submission of the `<form>` HTML element. 
 
-  ```
+ ```
   const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
     e.preventDefault(); // stop the form's default behaviour of submitting
@@ -85,3 +124,18 @@ para.classList.add("search-results-definition");
 
   
 ## 14. Usr console.log() to help us debug our code
+I used console log to understand the structure of the objects fetched from the dictionary API.
+
+```
+.then((data_arr) => { //returns object containing data relating to work
+          data_arr.forEach ( data => { //looping through each item in the object
+            console.log(data_arr)
+              headingOutput.textContent = data.word; //accessing the value in the word key
+              data.meanings.forEach ( meaning => { //accessing the value in the meanings key. As meanings is an array and not a single value, I'm looping through the array
+                  let subHeading = document.createElement("p"); 
+                  const wordType = document.createTextNode(`${meaning.partOfSpeech}`); //accessing the value within the part of speech key within each index of the array
+                  subHeading.appendChild(wordType); //adding the value of part of speech within the created paragraph tag
+                  subHeading.classList.add("search-results-part-of-speech"); //adding the correct css class to the paragraph element
+                  const list = document.querySelector(".search-results-description"); 
+                  list.appendChild(subHeading);
+```                  
