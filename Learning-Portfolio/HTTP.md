@@ -3,6 +3,31 @@
 
 ## 1. Write code that executes asynchronously
 
+
+```
+
+```
+
+```
+## 2. Use callbacks to access values that aren't available asynchronously 
+
+The event listener for the form acts as a callback.
+
+```
+form.addEventListener("submit", (e) => {
+    e.preventDefault(); // stop the form's default behaviour of submitting
+    const input = document.querySelector("input");
+    const searchTerm = input.value.toLowerCase().trim(); // save the word to a variable
+    input.value = ""; // clear the search bar
+    removeBox(); //removes the main placeholder container when user first searches to be replaced by output container
+    createOutput(); //creates an output container for the fetched API information with the same styling as the placeholder 
+    getGif(searchTerm); //fetches the gif API and returns into the created output container
+    getDefinition(searchTerm); //same s getGif but for dictionary definitions of the searched word. 
+})
+```      
+
+## 3. Use promises to access values that aren't available asynchronously
+
 ```
 fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
       .then((response) => {
@@ -11,14 +36,6 @@ fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
       })
       .then......
 ```
-## 2. Use callbacks to access values that aren't available asynchronously 
-
-```
-
-```      
-
-## 3. Use promises to access values that aren't available asynchronously
-
 
 ## 4. Use the fetch method to make the HTTP requests and receive responses
 
