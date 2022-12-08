@@ -166,10 +166,29 @@ para.classList.add("search-results-definition");
   
 ## 11. Use consistent layout and spacing
 
+For this, we ensured that the font reduced in size at reasonable increments and kept the main elements of the page within a set boundary. It is clear to the user what the output consists of as it all contained within a bordered element. 
+
+![Screenshot 2022-12-08 at 18 35 36](https://user-images.githubusercontent.com/108976875/206538687-1cb39271-8ad2-4c3e-9bda-e0d5a08ca203.png)
+
 
 ## 12. Follow a spacing guideline to give our app a consistent feel
 
-  
+To improve upon the look of our app we could have used CSS variables to define text size. I used this elsewhere on the advent calendar project:
+
+```
+:root {
+    --colour-one: #7F6B4E; /*shadow*/
+    --colour-two:   #36432F; /*cabbage point*/
+    --colour-three: #713C2F; /*spice*/
+    --colour-four: #A6B8BF; /*tower gray*/
+
+    --text-size: 0.98em;
+    --h1-size: 48px;
+    --h2-size: 36px;
+    --h3-size:  20px;
+}
+```
+
 ## 13. Debug client side JS in our web browser
 
 I haven't used this yet.
