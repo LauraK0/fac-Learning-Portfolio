@@ -3,35 +3,60 @@
 
 ## 1. Write code that executes asynchronously
 
+The below function executes asynchronously as it waits on the form submission event listener before running.
 ```
-
+function removeBox(){
+    if (document.body.contains(document.querySelector(".hero"))){ // removes the placeholder container if it exists
+        document.querySelector(".hero").remove();
+    }
+}
 ```
 ## 2. Use callbacks to access values that aren't available asynchronously 
 
-The event listener for the form acts as a callback.
+The below example is from the callbacks workshop and shows a typical example of a callback function.
 
 ```
-form.addEventListener("submit", (e) => {
-    e.preventDefault(); // stop the form's default behaviour of submitting
-    const input = document.querySelector("input");
-    const searchTerm = input.value.toLowerCase().trim(); // save the word to a variable
-    input.value = ""; // clear the search bar
-    removeBox(); //removes the main placeholder container when user first searches to be replaced by output container
-    createOutput(); //creates an output container for the fetched API information with the same styling as the placeholder 
-    getGif(searchTerm); //fetches the gif API and returns into the created output container
-    getDefinition(searchTerm); //same s getGif but for dictionary definitions of the searched word. 
-})
+      function light(colour, callback) {
+        setTimeout(() => {
+          console.log(colour);
+          if (callback) {
+            callback();
+          }
+        }, 1000);
+      }
+
+      light("green", () => {
+        light("amber", () => {
+          light("red", () => {
+            light("amber", () => {
+              light("green", () => {
+                console.log("finished");
+              });
+            });
+          });
+        });
+      });
 ```      
 
 ## 3. Use promises to access values that aren't available asynchronously
 
+This example below is taken from the next workshop on promises. Were it takes the previous example and rewrites it. The promise resolves after 1000 milliseconds.
+
 ```
-fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-      .then((response) => {
-          if (!response.ok) throw new Error(response.status); 
-          return response.json();
-      })
-      .then......
+      function wait(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      function light(color) {
+        return wait(1000).then(() => console.log(color));
+      }
+
+      light("green")
+        .then(() => light("amber"))
+        .then(() => light("red"))
+        .then(() => light("amber"))
+        .then(() => light("green"))
+        .then(() => light("finished"));
 ```
 
 ## 4. Use the fetch method to make the HTTP requests and receive responses
@@ -47,6 +72,17 @@ fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
 
 ## 5. Configure the options argument of the fetch method to make GET and POST requests
 
+As fetch defaults to GET, we didn't specify whether the fetch was to GET or POST in the API project. An example of using API to post is written below:
+
+```
+let fetchData = {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: new Headers({
+    'Content-Type': 'application/json; charset=UTF-8'
+  })
+}
+```
   
 ## 6. Use the map array method to create a new array containing new values
 
