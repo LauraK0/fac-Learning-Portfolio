@@ -172,6 +172,7 @@ para.classList.add("search-results-definition");
   
 ## 13. Debug client side JS in our web browser
 
+I haven't used this yet.
   
 ## 14. Usr console.log() to help us debug our code
 I used console log to understand the structure of the objects fetched from the dictionary API.
