@@ -3,9 +3,6 @@
 
 ## 1. Write code that executes asynchronously
 
-
-```
-
 ```
 
 ```
